@@ -1,4 +1,15 @@
-package PACKAGE_NAME;
+public class FormaPagamentoPix extends FormaPagamento {
 
-public class FormaPagamentoPix {
+    private static FormaPagamentoPix formaPagamentoPix = new FormaPagamentoPix();
+
+    private FormaPagamentoPix() {};
+
+    public static FormaPagamentoPix getInstancia() {
+        return formaPagamentoPix;
+    }
+
+    @Override
+    protected float calcularDesconto(float valor) {
+        return valor * 0.05f;
+    }
 }
